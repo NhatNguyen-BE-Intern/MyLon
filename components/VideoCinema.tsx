@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { content, VideoItem } from "@/lib/content";
 import { useAudio } from "./AudioProvider";
-import { DoodleHeart, DoodleStar } from "./Doodles";
+import { DoodleHeart } from "./Doodles";
 
 export function VideoCinema() {
   const [activeIndex, setActiveIndex] = useState(0);
