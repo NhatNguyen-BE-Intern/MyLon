@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-fraunces), "Fraunces", Georgia, serif;
+  --font-sans: var(--font-be-vietnam-pro), "Be Vietnam Pro", system-ui, sans-serif;
+  --font-handwriting: var(--font-caveat), "Caveat", cursive;
+
+  --color-cream-pink: #FFF3F0;
+  --color-pink-soft: #FFC9D9;
+  --color-pink-peach: #FF9EB5;
+  --color-pink-deep: #E8527A;
+  --color-text-brown: #3A1F27;
+}
+
+:root {
+  --bg-cream: #FFF3F0;
+  --pink-soft: #FFC9D9;
+  --pink-peach: #FF9EB5;
+  --pink-deep: #E8527A;
+  --text-brown: #3A1F27;
+  --ease-scrapbook: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-cream);
+  color: var(--text-brown);
+  font-family: var(--font-sans);
+  scroll-behavior: auto; /* Managed by Lenis */
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-cream);
+  color: var(--text-brown);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paper grain overlay */
+.paper-grain {
+  background-image: radial-gradient(rgba(58, 31, 39, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(232, 82, 122, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px, 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+/* Scrapbook Polaroid styling */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 38px 12px;
+  border-radius: 2px;
+  box-shadow: 0 10px 25px -5px rgba(58, 31, 39, 0.12),
+              0 8px 10px -6px rgba(58, 31, 39, 0.08),
+              0 0 0 1px rgba(58, 31, 39, 0.03);
+  transition: transform 0.4s var(--ease-scrapbook), box-shadow 0.4s var(--ease-scrapbook);
+}
+
+@media (min-width: 640px) {
+  .polaroid-frame {
+    padding: 16px 16px 46px 16px;
+  }
+}
+
+.polaroid-frame:hover {
+  box-shadow: 0 20px 35px -8px rgba(232, 82, 122, 0.22),
+              0 10px 15px -5px rgba(58, 31, 39, 0.1);
+}
+
+/* Washi Tape decorative element */
+.washi-tape-peach {
+  background: rgba(255, 158, 181, 0.82);
+  box-shadow: 0 2px 6px rgba(58, 31, 39, 0.12);
+  border-left: 2px dashed rgba(255, 255, 255, 0.5);
+  border-right: 2px dashed rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-soft {
+  background: rgba(255, 201, 217, 0.85);
+  box-shadow: 0 2px 6px rgba(58, 31, 39, 0.1);
+  border-left: 2px dashed rgba(255, 255, 255, 0.5);
+  border-right: 2px dashed rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-deep {
+  background: rgba(232, 82, 122, 0.75);
+  box-shadow: 0 2px 6px rgba(58, 31, 39, 0.15);
+  border-left: 2px dashed rgba(255, 255, 255, 0.4);
+  border-right: 2px dashed rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF3F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF9EB5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8527A;
+}
+
+/* Envelope 3D preserve */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+}
